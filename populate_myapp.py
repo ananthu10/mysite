@@ -1,15 +1,34 @@
-from faker import Faker
-import random
-import os
-from myapp.models import Topic, Webpage, AccessRecord
+
+from django.conf import settings
 import django
+# settings.configure('mysite.settings', DEBUG=True)
+# django.setup()
 
 
+import os
+import random
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+django.setup()
+
+from faker import Faker
+from myapp.models import Topic, Webpage, AccessRecord
+print('#############################################')
+
+
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', "mysite.settings")
+# django.setup()
+# settings.configure('mysite.settings', DEBUG=True)
+# django.setup()
+
+# os.environ['DJANGO_SETTINGS_MODULE'] = "mysite.settings"
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+# django.setup()
 # Configure settings for project
 # Need to run this before calling models from application!
 #os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
-django.setup()
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+
+
 # Import settings
 
 
